@@ -1,0 +1,54 @@
+<!--start navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/patients">All Patients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/addpatient">Add Patient</a>
+        </li>
+          
+          <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit"><a routerLink="/acceuil">Log-out</a></button>
+        
+      </ul>
+    </div>
+  </nav>
+  <hr>
+  <!--end navbar-->
+
+<div class="card">
+    <span><img src="{{p.image}}" class="card-img-top" alt="{{p.first_name}}"></span>
+    <div class="card-body">
+      <h5 class="card-title">ID : {{ p.id }} </h5>
+      <h6 class="card-text">Name : {{ p.first_name }}_{{ p.last_name }}</h6>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Sexe : {{ p.sexe }}</li>
+      <li class="list-group-item">Email : {{ p.email}}</li>
+      <li class="list-group-item">Adress : {{ p.address }}</li>
+      <div>
+        <p>Nb of visits = {{p.number_of_visits}}</p>
+        <button type="button" class="btn btn-success" (click) ="Onclick()">Add Visit</button>
+    </div>
+    <br>
+    </ul>
+
+    <div  role="group" aria-label="Basic example">
+      <a [routerLink]="['/updatepatient',p.id]"><button type="button" class="btn btn-info">Update</button></a>
+      <button type="button" class="btn btn-danger" (click)="DeletePatient(p)">Delete</button>
+      <button type="button" class="btn btn-light"><a routerLink="/patients">Back</a></button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small bg-light">
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#"> Medk.com</a>
+  </div>
+</footer>
+<!-- Footer -->
+
+
+
+    

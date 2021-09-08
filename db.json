@@ -1,0 +1,123 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "user": [
+    {
+      "id": 1,
+      "username": "medk",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "m",
+      "password": "m"
+    }
+  ],
+  "patient": [
+    {
+      "id": 1,
+      "first_name": "Marion",
+      "last_name": "Cotillard",
+      "sexe": "F",
+      "number_of_visits": 4,
+      "email": "mohamed.kbaier@esprit.tn",
+      "address": "Paris",
+      "image": "../assets/images/marion.jpg"
+    },
+    {
+      "id": 2,
+      "first_name": "Radhouan",
+      "last_name": "Khouadja",
+      "sexe": "M",
+      "number_of_visits": 0,
+      "email": "radhouan.khouadja@esprit.tn",
+      "address": "tunis",
+      "image": "../assets/images/radhouan.jpg"
+    },
+    {
+      "id": 3,
+      "first_name": "Ala",
+      "last_name": "Bachhamba",
+      "sexe": "M",
+      "number_of_visits": 0,
+      "email": "ala.bachhamba@esprit.tn",
+      "address": "Monastir",
+      "image": "../assets/images/ala.jpg"
+    },
+    {
+      "id": 4,
+      "first_name": "Feres",
+      "last_name": "Mechmech",
+      "sexe": "M",
+      "number_of_visits": 0,
+      "email": "feres.mechmech@esprit.tn",
+      "address": "nabeul",
+      "image": "../assets/images/feres.jpg"
+    },
+    {
+      "id": 5,
+      "first_name": "Jessica",
+      "last_name": "Stroup",
+      "sexe": "F",
+      "number_of_visits": 0,
+      "email": "jessica.stroup@gmail.com",
+      "address": "L_A",
+      "image": "../assets/images/samira.jpg"
+    },
+    {
+      "id": 6,
+      "first_name": "Med",
+      "last_name": "Kbaier",
+      "sexe": "M",
+      "email": "medk.k@gmail.fr",
+      "address": "ariana",
+      "image": "../assets/images/medk.jpg",
+      "number_of_visits": 0
+    },
+    {
+      "id": 7,
+      "first_name": "Nora",
+      "last_name": "Arnezeder",
+      "sexe": "F",
+      "email": "nora.k@gmail.fr",
+      "address": "Paris",
+      "image": "../assets/images/Nora.jpg",
+      "number_of_visits": 0
+    },
+    {
+      "id": 8,
+      "first_name": "Marwen",
+      "last_name": "Riahi",
+      "sexe": "M",
+      "email": "riahi.k@gmail.fr",
+      "address": "Siliana",
+      "image": "../assets/images/riahi.jpg",
+      "number_of_visits": 0
+    },
+    {
+      "id": 9,
+      "first_name": "Angelina",
+      "last_name": "Jolie",
+      "sexe": "F",
+      "email": "joli.k@gmail.fr",
+      "address": "New_York",
+      "image": "../assets/images/jolie.jpg",
+      "number_of_visits": 0
+    }
+  ]
+}

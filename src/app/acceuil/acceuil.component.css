@@ -1,0 +1,22 @@
+img{
+    width: 100%;
+}
+.container {
+    position: relative;
+  }
+.text-block {
+    position: relative;
+    background-color: black;
+    color: white;
+  }
+label{
+    display: inline-block;
+    width: 250px;
+    
+}
+input {
+   display: inline-block;
+}
+.btn{
+  margin-top: 15px;
+}

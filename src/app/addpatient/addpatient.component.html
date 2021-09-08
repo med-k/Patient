@@ -1,0 +1,63 @@
+<!--start navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="/patients">All Patients</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/addpatient">Add Patient</a>
+      </li>
+        
+        <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit"><a routerLink="/acceuil">Log-out</a></button>
+      
+    </ul>
+  </div>
+</nav>
+<hr>
+<!--end navbar-->
+  
+<form [formGroup]="PatientForm">
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label >First Name</label>
+        <input type="text" class="form-control" formControlName="first_name" [(ngModel)]="patient.first_name">
+        <div *ngIf="PatientForm.get('first_name').invalid && PatientForm.get('first_name').touched">You need to write a First_Name</div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Last Name</label>
+        <input type="text" class="form-control" formControlName="last_name" [(ngModel)]="patient.last_name">
+        <div *ngIf="PatientForm.get('last_name').invalid && PatientForm.get('last_name').touched">You need to write a Last_Name</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-2 mb-3">
+        <label>Sexe</label>
+        <input type="text" class="form-control" formControlName="sexe" [(ngModel)]="patient.sexe">
+        <div *ngIf="PatientForm.get('sexe').invalid && PatientForm.get('sexe').touched">
+          <div *ngIf="PatientForm.get('sexe').errors.required">Sexe required</div>
+          <div *ngIf="PatientForm.get('sexe').errors.pattern"> Must be M or F </div>
+        </div>
+      </div>
+      <div class="col-md-10 mb-3">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email" [(ngModel)]="patient.email">
+        <div *ngIf="PatientForm.get('email').invalid && PatientForm.get('email').touched">
+          <div *ngIf="PatientForm.get('email').errors.required">Email required</div>
+          <div *ngIf="PatientForm.get('email').errors.pattern">Email Invalid Form</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label>Adress</label>
+        <input type="text" class="form-control" formControlName="address" [(ngModel)]="patient.address">
+        <div *ngIf="PatientForm.get('address').invalid && PatientForm.get('address').touched">You need to write the adress</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="PatientForm.invalid" (click)="AddPatient()"> ADD </button>
+  </form>
+
+  
+  
+    

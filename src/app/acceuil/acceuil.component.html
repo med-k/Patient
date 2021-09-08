@@ -1,0 +1,20 @@
+
+
+<div class="container">
+	<img src="../assets/images/medecin.jpg" class="img-fluid" alt="Responsive image">
+	<div>
+		<div class="card text-center text-block">
+			<div class="card-body">
+			  <h1 class="card-title">Welcome</h1>
+				<label>UserName</label> <input type="text" name="username"class="form-control"  #username="ngModel" [(ngModel)]="UserName"> 
+				 
+				<label>Password</label> <input type="text" name="password" #password="ngModel" class="form-control" [(ngModel)]="PassWord">
+				 
+				<button type="submit" class="btn btn-light" (click)="login(UserName,PassWord)"> Login </button>
+				<p *ngIf="loginVal" class="alert alert-danger">
+					Authentification failed
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

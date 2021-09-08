@@ -1,0 +1,54 @@
+<!--start navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/patients">All Patients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addpatient">Add Patient</a>
+      </li>
+        <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit"><a routerLink="/acceuil">Log-out</a></button>
+    </ul>
+    <div class="d-flex">
+      <input class="form-control" type="text"  placeholder="First Name" [(ngModel)]='f_n'>
+      <input class="form-control" type="text"  placeholder="Last Name" [(ngModel)]='l_n'>
+    </div>
+  </div>
+</nav>
+<hr>
+<!--end navbar-->
+
+<div class="row" > 
+  <div class="col-sm-4" *ngFor="let p of Patients">
+    <div *ngIf="(f_n=='' && l_n=='') || (p.first_name.indexOf(f_n)!=-1 && p.last_name.indexOf(l_n)!=-1)">
+      <div class="card" style="width: 18rem;">
+        <span><img src="{{p.image}}" class="card-img-top" alt="{{p.first_name}}"></span>
+        <div class="card-body">
+          <p class="card-text">Name : {{ p.first_name }}_{{ p.last_name }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><app-visit 
+            [patient] = 'p' (AddVisit) = "addvisit($event)"
+            ></app-visit></li>
+        </ul>
+        <div class="card-body">
+          <a [routerLink]="['/patient',p.id]"><button class="btn btn-info">View Details</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small bg-light">
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#"> Medk.com</a>
+  </div>
+</footer>
+<!-- Footer -->
+
+
+  
+
+

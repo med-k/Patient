@@ -1,0 +1,59 @@
+
+<!--start navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="/patients">All Patients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addpatient">Add Patient</a>
+      </li>
+        
+        <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit"><a routerLink="/acceuil">Log-out</a></button>
+      
+    </ul>
+  </div>
+</nav>
+<hr>
+<!--end navbar-->
+<form #formulaire="ngForm">
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label >First Name</label>
+        <input type="text" class="form-control" name="first_name" required [(ngModel)]="patient.first_name" #first_name="ngModel">
+        <div *ngIf="first_name.invalid && first_name.touched">You need to write a First_Name</div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Last Name</label>
+        <input type="text" class="form-control" name="last_name" required [(ngModel)]="patient.last_name" #last_name="ngModel">
+        <div *ngIf="last_name.invalid && last_name.touched">You need to write a Last_Name</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-2 mb-3">
+        <label>Sexe</label>
+        <input type="text" class="form-control" name="sexe" required [(ngModel)]="patient.sexe" #sexe="ngModel" pattern="^[M|F]{1}$">
+        <div *ngIf="sexe.invalid && sexe.touched">
+          <div *ngIf="sexe.errors.required">Sexe required</div>
+          <div *ngIf="sexe.errors.pattern"> Must be M or F </div>
+        </div>
+      </div>
+      <div class="col-md-10 mb-3">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" required [(ngModel)]="patient.email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="email.invalid && email.touched">
+          <div *ngIf="email.errors.required">Email required</div>
+          <div *ngIf="email.errors.pattern">Email Invalid Form</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label>Adress</label>
+        <input type="text" class="form-control" name="address" required [(ngModel)]="patient.address" #address="ngModel">
+        <div *ngIf="address.invalid && address.touched">You need to write the adress</div>
+      </div>
+    </div>
+  </form>
+  <button class="btn btn-primary" type="submit" [disabled]="formulaire.invalid" (click)="Update(patient)"> Update </button>
